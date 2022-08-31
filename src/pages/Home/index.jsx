@@ -24,12 +24,18 @@ function Home() {
   
   return (
     <div className="container">
-   <h1>Lista de Presença</h1>
-   <input type="text" 
-   placeholder="Digite um nome..." 
-   onChange={(e) => setStudentName(e.target.value)}
-   />
-   <button onClick={handleAddStudent} type="button">Adicionar</button>
+      <header>
+      <h1>Lista de Presença</h1>
+        <div>
+          <strong>Julius caezar</strong>
+          <img src="https://github.com/juliuscaezarff.png" alt="Foto de perfil" />
+        </div>
+      </header>
+      <input type="text" 
+      placeholder="Digite um nome..." 
+      onChange={(e) => setStudentName(e.target.value)}
+      />
+      <button onClick={handleAddStudent} type="button">Adicionar</button>
 
    
     {students.map((student) => (
