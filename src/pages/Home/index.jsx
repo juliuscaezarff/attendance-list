@@ -25,14 +25,17 @@ function Home() {
 
   useEffect(() => {
     // corpo do useEffect
-    fetch('https://api.github.com/users/juliuscaezarff')
-    .then(resp => resp.json())
-    .then(data => {
+    async function fetchData() {
+      const resp = await fetch('https://api.github.com/users/juliuscaezarff')
+      const data = await resp.json()
+    
       setUser({
         name: data.name,
         avatar: data.avatar_url,
       })
-    })
+    }
+    
+    fetchData()
   }, [])
   
   return (
