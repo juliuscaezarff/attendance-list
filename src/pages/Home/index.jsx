@@ -28,7 +28,10 @@ function Home() {
     fetch('https://api.github.com/users/juliuscaezarff')
     .then(resp => resp.json())
     .then(data => {
-
+      setUser({
+        name: data.name,
+        avatar: data.avatar_url,
+      })
     })
   }, [])
   
