@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 
 import  './styles.css'
 
@@ -8,6 +8,7 @@ function Home() {
 
   const [studentName, setStudentName] = useState('')
   const [students, setStudents] = useState([])
+  const [ser, setUser] = useState({ name: '', avatar: '' })
 
   function handleAddStudent() {
     const newStudent = {
@@ -21,6 +22,10 @@ function Home() {
 
     setStudents( prevState => [...prevState, newStudent])
   }
+
+  useEffect(() => {
+    // corpo do useEffect
+  }, [])
   
   return (
     <div className="container">
